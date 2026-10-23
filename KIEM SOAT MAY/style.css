@@ -1,0 +1,270 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#demThoiGianDinhMuc {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+
+/* Đối chiếu định mức - phần bổ sung độc lập */
+#thoiGian {
+    flex: 1;
+}
+
+.doi-chieu-dinh-muc {
+    box-sizing: border-box;
+    width: min(100%, 340px);
+    flex-shrink: 0;
+    margin: 8px 0 16px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+.doi-chieu-dinh-muc h3 {
+    margin: 0 0 10px;
+}
+
+.doi-chieu-dinh-muc p {
+    margin: 7px 0;
+}
+
+#canhBaoDinhMuc {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.canh-bao-trong-nguong {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.canh-bao-vuot {
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+.canh-bao-thap {
+    color: #854d0e;
+    background: #fef3c7;
+}
+
+@media (max-width: 600px) {
+    #demThoiGianDinhMuc {
+        flex-direction: column; /* Xếp chồng khối thời gian và khối định mức thành hàng dọc */
+        gap: 16px; /* Tạo khoảng cách 16px giữa 2 khối khi chồng lên nhau */
+    }
+
+    #thoiGian {
+        width: 100%; /* Cho phép khối thời gian chiếm hết chiều rộng màn hình điện thoại */
+    }
+
+    .doi-chieu-dinh-muc {
+        width: 100%; /* Trên điện thoại, hộp định mức sẽ co giãn đầy màn hình (max 340px cũ bị hủy) */
+        margin: 0;   /* Reset lại margin để khoảng cách do thuộc tính gap ở trên quản lý */
+    }
+}
+
+
+.nut-xem-lich-su {
+    cursor: pointer;
+    color: blue;
+}
+
+.bang-lich-su {
+    display: none;
+    margin-top: 10px;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+
+
+#khuPhoiLieu {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+#soNguonPhoiLieu {
+    width: 65px;
+    padding: 5px;
+}
+
+.nguon-phoi-lieu {
+    margin-top: 18px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    overflow-x: auto;
+}
+
+.thong-tin-nguon {
+    display: grid;
+    grid-template-columns: 150px 130px;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.thong-tin-nguon label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.thong-tin-nguon input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px;
+}
+
+.bang-nguyen-lieu {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.bang-nguyen-lieu .cot-sl { width: 12%; }
+.bang-nguyen-lieu .cot-kg { width: 14%; }
+.bang-nguyen-lieu .cot-ti-le { width: 12%; }
+.bang-nguyen-lieu .cot-tong { width: 16%; }
+.bang-nguyen-lieu .cot-chenh-lech { width: 25%; }
+.bang-nguyen-lieu .cot-sl-ket-qua { width: 21%; }
+
+.bang-nguyen-lieu th,
+.bang-nguyen-lieu td {
+    border: 1px solid #ccc;
+    padding: 7px;
+    text-align: center;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+
+.bang-nguyen-lieu th {
+    background: #eee;
+    white-space: nowrap;
+}
+
+.bang-nguyen-lieu input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.bang-nguyen-lieu .tong-vang {
+    background: #fff2a8;
+}
+
+.bang-nguyen-lieu .tong-xam {
+    background: #ddd;
+}
+
+.bang-nguyen-lieu .tong-nguon {
+    font-weight: bold;
+    background: #f3f3f3;
+}
+
+.bang-nguyen-lieu .chenh-lech-nguon,
+.bang-nguyen-lieu .tong-chenh-lech {
+    font-weight: bold;
+}
+
+.bang-nguyen-lieu .sl-muc-tieu-2 {
+    color: blue;
+    font-weight: bold;
+}
+
+.bang-nguyen-lieu .o-them-dong {
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tong-ket-phoi-lieu {
+    margin-top: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.tong-ket-phoi-lieu h3 {
+    margin-top: 0;
+}
+
+.tong-ket-luoi {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 20px;
+}
+
+.tong-ket-luoi label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tong-ket-luoi input {
+    width: 100%;
+    max-width: 220px;
+    box-sizing: border-box;
+    padding: 6px;
+}
+
+.tong-ket-luoi > label,
+.tong-ket-luoi > p {
+    margin: 0;
+    flex: 1 1 180px;
+}
+
+.nut-tinh-toan {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+    .tong-ket-luoi {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.tong-ket-phoi-lieu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    margin-top: 0;
+    padding: 12px 20px;
+    background: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+body {
+    padding-bottom: 220px;
+}
+
+
+

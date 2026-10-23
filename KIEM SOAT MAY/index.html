@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy chạy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+
+</head>
+<body>
+    <div id="demThoiGianDinhMuc">
+        <div id="ungDungMayChay">
+            <h1>Ứng dụng máy chạy</h1>
+            <p>Định mức:
+                <input type="number" id="dinhMuc" value="310" min="0">
+            </p>
+
+            <h2>Thời gian chạy</h2>
+            <h2 id="thoiGian">00:00:00</h2>
+
+            <div class="nut-xem-lich-su" onclick="hienThiLichSu()">
+                Xem lịch sử chạy/dừng &#9660;
+            </div>
+            <div id="bangLichSu" class="bang-lich-su">
+                <h3>Lịch sử chạy dừng</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Giờ dừng</th>
+                            <th>Giờ chạy</th>
+                        </tr>
+                    </thead>
+                    <tbody id="danhSachLichSu"></tbody>
+                </table>
+            </div>
+
+            <h2>Thời gian dừng</h2>
+            <h2 id="thoiGianDung">00:00:00</h2>
+
+            <button onclick="batDau()">BẮT ĐẦU</button>
+            <button onclick="dung()">DỪNG</button>
+            <button onclick="ketThucCa()">KẾT THÚC CA</button>
+        </div>
+        <div id="khungChenhLechDinhMuc">
+            <div id="doiChieuDinhMuc" class="doi-chieu-dinh-muc">
+                <h3>ĐỐI CHIẾU ĐỊNH MỨC</h3>
+                <p>NL chuẩn: <strong id="nlChuan">0 kg</strong></p>
+                <p>Tiêu hao: <strong id="tieuHaoThucTe">0 kg</strong></p>
+                <p>Chênh lệch: <strong id="chenhLechDinhMuc">0 kg</strong></p>
+                <div id="canhBaoDinhMuc" class="canh-bao-trong-nguong">
+                    ĐANG TRONG NGƯỠNG CHO PHÉP
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="khuPhoiLieu">
+        <h2>Bảng phối liệu</h2>
+
+        <label>
+            Số nguồn:
+            <input
+                type="number"
+                id="soNguonPhoiLieu"
+                min="1"
+                value="2"
+            >
+        </label>
+
+        <button type="button" onclick="taoBangPhoiLieu()">
+            TẠO BẢNG PHỐI LIỆU
+
+        </button>
+
+    
+    <div id="danhSachNguonPhoiLieu"></div>
+
+    <div class="tong-ket-phoi-lieu">
+        <h3>Tổng kết phối liệu</h3>
+
+        <div class="tong-ket-luoi">
+            <label>
+                Mục tiêu (kg):
+                <input type="number" id="mucTieuPhoiLieu"
+                       min="0" step="any">
+            </label>
+
+            <p>
+                TỔNG TẤT CẢ:
+                <strong id="tongTatCaPhoiLieu">0</strong> kg
+            </p>
+
+            <p>
+                Tổng chênh lệch:
+                <strong id="tongChenhLechPhoiLieu">0</strong> kg
+            </p>
+
+            <label>
+                Mục tiêu 2 (kg):
+                <input type="number" id="mucTieu2PhoiLieu"
+                       min="0" step="any">
+            </label>
+        </div>
+
+        <div class="nut-tinh-toan">
+            <button type="button" onclick="tinhLaiPhoiLieu()">
+                TÍNH LẠI
+            </button>
+
+            <button type="button" onclick="tinhMucTieu2PhoiLieu()">
+                MỤC TIÊU 2
+            </button>
+        </div>
+    </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
